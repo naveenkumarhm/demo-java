@@ -8,6 +8,7 @@ pipeline{
       steps{
         echo 'Building the java-code'
         sh 'mvn clean install'
+        sh 'docker build -t naveenhm/demo-war .'
       }
     }
   }
