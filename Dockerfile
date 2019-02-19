@@ -11,6 +11,7 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/* && apt-get clean && apt-get purge
 
 RUN echo "export JAVA_OPTS=\"-Dapp.env=staging\"" > /usr/local/tomcat/bin/setenv.sh
+RUN pwd
 COPY /var/lib/jenkins/workspace/sample-java/target/demo.war /usr/local/tomcat/webapps/demo.war
 
 EXPOSE 8080
