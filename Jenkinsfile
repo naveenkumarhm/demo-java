@@ -10,7 +10,7 @@ pipeline{
         sh 'mvn clean install'
         sh 'sudo cp /var/lib/jenkins/workspace/sample-java/target/demo.war /var/lib/docker/tmp/docker-builder*'
         sh 'pwd'
-        sh 'docker build -t naveenhm/demo-war .'
+        sh 'docker build -t naveenhm/demo-war . -f /var/lib/jenkins/workspace/sample-java/target'
         sh 'docker run --rm -p 8081:8080 -d naveenhm/demo-war'
         
       }
