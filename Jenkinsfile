@@ -8,7 +8,7 @@ pipeline{
       steps{
         echo 'Building the java-code'
         sh 'mvn clean install'
-        sh 'sudo cp /var/lib/jenkins/workspace/sample-java/target/demo.war /var/lib/docker/tmp'
+        sh 'sudo cp /var/lib/jenkins/workspace/sample-java/target/demo.war /var/lib/docker/tmp/docker-builder*'
         sh 'pwd'
         sh 'docker build -t naveenhm/demo-war .'
       }
