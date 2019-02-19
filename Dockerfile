@@ -12,6 +12,7 @@ RUN apt-get update && \
 
 RUN echo "export JAVA_OPTS=\"-Dapp.env=staging\"" > /usr/local/tomcat/bin/setenv.sh
 RUN pwd
+WORKDIR /var/lib/jenkins/workspace/demo-java/target/
 COPY demo.war /usr/local/tomcat/webapps/demo.war
 
 EXPOSE 8080
