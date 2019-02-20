@@ -12,7 +12,7 @@ pipeline{
         sh 'pwd'
         sh 'docker build -t naveenhm/demo-war . -f /var/lib/jenkins/workspace/sample-java/Dockerfile'
         sh 'sudo docker push naveenhm/demo-war'
-        sh 'docker run --rm -p 8081:8080 -d naveenhm/demo-war service start nginx'
+        sh 'docker run --rm -p 8081:8080 -d naveenhm/demo-war'
         
       }
     }
